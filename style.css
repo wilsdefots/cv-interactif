@@ -1,0 +1,38 @@
+
+  body {font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;  margin:0; padding-left: 2rem; }
+  
+  body.mode_clair {background-color: inherit; color: black;}
+  body.mode_sombre {background-color : #20232a; color : white;}
+  body.mode_sombre #compteur {border: solid white;}
+ 
+   main{margin-left: 4rem;}
+  
+  #nom {font-size: 32px; margin: 0 0 2px;color: blue;text-align: center; }
+ 
+  h3 {color : blue ; text-align : center ; margin : 0 ; }
+  
+  #compteur{color: green ;border : solid black ; margin-top : 4rem; }
+  
+  nav a:hover {color : green  ;}
+  
+  .table_matiere ul {list-style : none; margin: 2px 0 0; padding: 5px; }
+  
+  .table_matiere li::before {content: "👉";color: gold; font-size: 1.2em; margin-right: 8px;}
+  
+  .table_matiere a{text-decoration : none ; color : skyblue ;}
+  
+  #contact{list-style: none; padding: 0; margin: 0; display : flex ; flex-wrap: wrap; color: gray ; }
+  #telephone{border: dashed blue ; border-radius : 10% ; padding : 10px 15px 10px 10px;margin : 30px ;}
+  #pdf{padding-left : 10rem ;}
+  
+  .introduction {list-style: none;display: flex;padding: 0;margin: 10px;}
+  
+  .introduction a {color: blue;text-decoration: none;}
+  
+  .introduction a:hover {text-decoration: underline;}
+  
+  .langues {list-style: none;}
+
+
+
+
