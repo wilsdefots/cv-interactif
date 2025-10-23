@@ -1,49 +1,57 @@
-  
-   
-   const date_actuelle = new Date();
-   document.getElementById("valeur_date").textContent = date_actuelle.toLocaleDateString('fr-FR', { 
-		day: 'numeric', month: 'short', year: 'numeric'} );
 
-   
-  document.addEventListener("DOMContentLoaded", function() { 
-	let temps = 0;
-	
-	function calculer_temps() {
-		temps++;
-		document.getElementById("compteur").textContent = temps;
-	}
-	
-	setInterval(calculer_temps, 1000);
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* pour mettre la date actuelle */ 
+    const date_actuelle = new Date();
+    document.getElementById("valeur_date").textContent = date_actuelle.toLocaleDateString('fr-FR', {
+        day: 'numeric', month: 'short', year: 'numeric'
     });
 
-    const mode_sombre = document.getElementById("sombre");
-    const mode_clair = document.getElementById("clair");
+    /* Pour connaitre le temps passer à consulter mon cv */
 
-   mode_sombre.addEventListener("click", () => {
-	   document.body.classList.remove("mode_clair");
-	   document.body.classList.add("mode_sombre"); 
-   });
+    let temps = 0;
+    setInterval(() => {
+        temps++;
+        document.getElementById("compteur").textContent = temps;
+    }, 1000);
 
 
-  mode_clair.addEventListener("click", () => {
-	document.body.classList.remove("mode_sombre"); 
-	document.body.classList.add("mode_clair")
-  });	
- 
- const bouton_rappel = document.getElementById("rappel");
+    /* Pour le passage du mode clai au mode sombre, et inversement */
 
- bouton_rappel.addEventListener("click", () => {
-    let numero = prompt("Veuillez entrer votre numéro de téléphone :");
-    console.log("Numéro de téléphone saisi :", numero);
+    let selection_mode = document.getElementById("mode");
 
-    while (numero == "") {
-        alert("invalide ! : ");
-		console.log("Numéro de téléphone saisi :", numero);
-		numero = prompt("Veuillez entrer votre numéro de téléphone :")
-    }
-        alert("Merci ! Vous serez rappelé au : " + numero + " dans les meilleurs delais");
-  
- });
- 
- 
+    selection_mode.addEventListener("change", () => {
+        if (selection_mode.value === "sombre") {
+            document.body.classList.remove("mode_clair");
+            document.body.classList.add("mode_sombre");
+        } else {
+            document.body.classList.remove("mode_sombre");
+            document.body.classList.add("mode_clair");
+        }
+    });
+
+
+    /* Pour permettre à l'utilisateur de donner ses coordonnées*/
+
+    const bouton_rappel = document.getElementById("rappel");
+    bouton_rappel.addEventListener("click", () => {
+        let numero = prompt("Veuillez entrer votre numéro de téléphone :");
+        while (!numero) {
+            alert("Entrez une valeur !");
+            numero = prompt("Veuillez entrer votre numéro de téléphone :");
+        }
+        alert("Merci ! Vous serez rappelé au : " + numero + " dans les meilleurs délais");
+    });
+
+
+
+    let bouton_telecharger = document.getElementById("telechargement");
+    bouton_telecharger.addEventListener("click",  ()=> {
+        alert("Toi aussi! pourquoi télécharges-tu mon cv au lieu de simplement me contacter. Lol !") });
+
+});
+
+
+
 
